@@ -40,6 +40,45 @@
       </fieldset>
 
       <!--Bloque 2: Informacion Académica y Cuenta-->
+      <fieldset>
+        <legend>Información de la Cuenta</legend>
+
+        <div class="form-group">
+          <label for="email">Correo Institucional:</label>
+          <input type="email" id="email" name="email" class="form-input" required placeholder="estudiante@unsa.edu.pe">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" name="password" class="form-input" pattern="=(?=.*\d)(?=.[a-z])(?=.*[A-Z]).{8,}" required placeholder="Minímo 8 caracteres, 1 mayúscula y 1 número" title="Debe tener al menos 8 caracteres, incluyendo una letra mayúscula y un numero.">
+        </div>
+
+        <div class="form-group">
+          <label for="carrera">Carrera Profesional:</label>
+          <select id="carrera" name="carrera" class="form-input" required>
+            <option value="">-- Seleccione una Carrera --</option>
+            <option value="sistemas">Ingeniería de Sistemas</option>
+            <option value="industrial">Ingeniería Industrial</option>
+            <option value="civil">Ingeniería Civil</option>
+            <option value="ambiental">Ingeniería Ambiental</option>
+            <option value="matematicas">Matematicas no existe</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="comentarios">Comentarios Adicionales:</label>
+          <tecterea id="comentarios" name="comentarios" class="form-input" rows="3" placeholder="Escribe aquí cualquier observación..."></tecterea>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" id="terminos" name="terminos" required>
+            Acepto los términos y condiciones del sistema.
+          </label>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn-submit">Registrar Estudiante</button>
     </form>
   </div>
 </body>
