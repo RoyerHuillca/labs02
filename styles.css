@@ -1,0 +1,142 @@
+/* 1. Regla Global y Reset básico */
+* {
+  box-sizing: border-box; /* El ancho y alto incluyen el padding y los bordes */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* 2. Diseño de la Tarjeta (Card) */
+.card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 500px; /* Ancho máximo delimitado */
+  padding: 25px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* Estilos de Fieldset y Legend */
+fieldset {
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+/* Contenedor de cada grupo de campo */
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #444444;
+  font-weight: 600;
+}
+
+/* Estilizado de las entradas (input, select, textarea) */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* 3. Estados Interactivos con Pseudo-clases */
+
+/* Estado :focus (cuando el usuario hace clic o selecciona un campo) */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.4);
+}
+
+/* Estado :disabled (campo desactivado) */
+input:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+  border-color: #ced4da;
+}
+
+/* Opciones de Radio y Checkbox */
+.options-inline {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.options-inline label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+/* Botón de Envío */
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: #0056b3;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Pseudo-clase :hover (al pasar el ratón por encima) */
+.btn-submit:hover {
+  background-color: #003d80;
+}
+
+/* Pseudo-clase :active (al hacer clic o presionar) */
+.btn-submit:active {
+  transform: scale(0.98);
+}
