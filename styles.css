@@ -1,13 +1,13 @@
-/* 1. RESET Y MODELO DE CAJA GLOBAL */
+/* RESET GLOBAL */
 * {
-  box-sizing: border-box; /* Requerimiento obligatorio de caja */
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 body {
-  background-color: #f1f5f9;
+  background-color: #f3f4f6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,72 +15,88 @@ body {
   padding: 30px 15px;
 }
 
-/* 2. DISEÑO DE LA TARJETA (CARD) */
+/* TARJETA PRINCIPAL (CARD) */
 .card {
   background-color: #ffffff;
   width: 100%;
-  max-width: 520px;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  max-width: 540px;
+  padding: 35px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+/* LOGO Y ENCABEZADO */
+.header-container {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.unsa-logo {
+  height: 90px;
+  width: auto;
+  margin-bottom: 12px;
+  object-fit: contain;
 }
 
 .card h2 {
-  text-align: center;
-  margin-bottom: 24px;
-  color: #1e293b;
-  font-size: 1.5rem;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
 }
 
-/* 3. FIELDSET Y LEGEND */
+/* SECCIONES FIELDSET */
 fieldset {
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  padding: 18px;
-  margin-bottom: 20px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 22px 20px 15px 20px;
+  margin-bottom: 25px;
+  background-color: #ffffff;
 }
 
 legend {
-  padding: 0 8px;
-  font-weight: 700;
-  color: #2563eb;
-  font-size: 0.9rem;
+  padding: 0 10px;
+  font-weight: 800;
+  color: #2563eb; /* Azul brillante como en tu captura */
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
 }
 
-/* 4. GRUPOS DE FORMULARIO Y ETIQUETAS */
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   display: flex;
   flex-direction: column;
 }
 
 label {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #334155;
-  margin-bottom: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
 }
 
-/* 5. ENTRADAS DE TEXTO, SELECT Y TEXTAREA (.form-input) */
+/* CAMPOS DE TEXTO E INPUTS */
 .form-input {
   width: 100%;
-  padding: 10px 12px;
+  padding: 11px 14px;
   font-size: 0.95rem;
+  color: #334155;
   border: 1px solid #cbd5e1;
-  border-radius: 6px;
+  border-radius: 8px;
   outline: none;
-  transition: all 0.2s ease;
   background-color: #ffffff;
+  transition: all 0.2s ease-in-out;
 }
 
 textarea.form-input {
   resize: vertical;
 }
 
-/* PSEUDO-CLASES DE INTERACCIÓN (:focus, :hover, :disabled) */
+/* ESTADOS INTERACTIVOS (PSEUDO-CLASES) */
 .form-input:focus {
   border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 0 0 3.5px rgba(37, 99, 235, 0.15);
 }
 
 .form-input:hover:not(:disabled) {
@@ -88,60 +104,66 @@ textarea.form-input {
 }
 
 .form-input:disabled {
-  background-color: #f1f5f9;
+  background-color: #f8fafc;
   color: #94a3b8;
   cursor: not-allowed;
 }
 
-/* 6. RADIOS Y CHECKBOX */
+/* OPONIONES DE RADIO Y CHECKBOX */
 .radio-group {
   display: flex;
   gap: 20px;
   align-items: center;
-  padding-top: 4px;
 }
 
 .radio-group label,
 .checkbox-group label {
-  font-weight: normal;
+  font-weight: 500;
+  color: #1e293b;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .checkbox-group {
   flex-direction: row;
   align-items: center;
-  gap: 10px;
 }
 
 .radio-group input[type="radio"],
 .checkbox-group input[type="checkbox"] {
   accent-color: #2563eb;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
 }
 
-/* 7. BOTÓN DE ENVÍO Y ESTADOS (:hover, :active, :focus) */
+/* BOTÓN DE ENVÍO */
 .btn-submit {
   width: 100%;
-  padding: 12px;
+  padding: 13px;
   background-color: #2563eb;
   color: #ffffff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 }
 
 .btn-submit:hover {
   background-color: #1d4ed8;
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
 }
 
 .btn-submit:active {
-  transform: scale(0.99);
+  transform: scale(0.985);
 }
 
 .btn-submit:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.35);
 }
