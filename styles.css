@@ -1,65 +1,103 @@
-/* 1. Regla Global y Reset básico */
+/* ==========================================================================
+   1. VARIABLES GLOBALES Y RESET (Modelo de Caja)
+   ========================================================================== */
+:root {
+  --primary-color: #2563eb;       /* Azul principal */
+  --primary-hover: #1d4ed8;       /* Azul oscuro para hover */
+  --primary-active: #1e40af;      /* Azul para clic activo */
+  --bg-body: #f8fafc;             /* Fondo gris claro moderno */
+  --bg-card: #ffffff;             /* Fondo blanco de la tarjeta */
+  --text-main: #0f172a;           /* Texto oscuro de alto contraste */
+  --text-muted: #64748b;          /* Texto secundario */
+  --border-color: #cbd5e1;        /* Borde suave de insumos */
+  --border-focus: #3b82f6;        /* Resplandor al enfocar */
+  --bg-disabled: #f1f5f9;         /* Fondo de campos desactivados */
+  --text-disabled: #94a3b8;       /* Texto desactivado */
+  --radius: 8px;                  /* Redondeo de esquinas */
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 * {
-  box-sizing: border-box; /* El ancho y alto incluyen el padding y los bordes */
+  box-sizing: border-box; /* Aplicación estricta del modelo de caja */
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  background-color: #f0f2f5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.5;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 24px 16px;
 }
 
-/* 2. Diseño de la Tarjeta (Card) */
+/* ==========================================================================
+   2. TARJETA CONTENEDORA (Card Layout)
+   ========================================================================== */
 .card {
-  background-color: #ffffff;
+  background-color: var(--bg-card);
   width: 100%;
-  max-width: 500px; /* Ancho máximo delimitado */
-  padding: 25px;
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 550px; /* Ancho máximo delimitado */
+  padding: 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid #e2e8f0;
 }
 
-h2 {
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 20px;
-  color: #333333;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
 }
 
-/* Estilos de Fieldset y Legend */
+/* ==========================================================================
+   3. BLOQUES Y CAMPOS DEL FORMULARIO
+   ========================================================================== */
 fieldset {
-  border: 1px solid #cccccc;
-  border-radius: 6px;
-  padding: 15px;
-  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 24px;
+  background-color: #ffffff;
 }
 
 legend {
   padding: 0 8px;
-  font-weight: bold;
-  color: #0056b3;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* Contenedor de cada grupo de campo */
 .form-group {
-  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
 }
 
 label {
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: #444444;
+  font-size: 0.875rem;
   font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 6px;
 }
 
-/* Estilizado de las entradas (input, select, textarea) */
+/* ==========================================================================
+   4. ESTILIZADO DE INPUTS, SELECT Y TEXTAREA
+   ========================================================================== */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -68,42 +106,71 @@ input[type="date"],
 select,
 textarea {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-  transition: all 0.3s ease;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: calc(var(--radius) - 2px);
+  outline: none;
+  transition: var(--transition);
 }
 
-/* 3. Estados Interactivos con Pseudo-clases */
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
 
-/* Estado :focus (cuando el usuario hace clic o selecciona un campo) */
+/* ==========================================================================
+   5. PSEUDO-CLASES E INTERACTIVIDAD
+   ========================================================================== */
+
+/* Estado :focus (Enfoque interactivo) */
 input:focus,
 select:focus,
 textarea:focus {
-  outline: none;
-  border-color: #0056b3;
-  box-shadow: 0 0 5px rgba(0, 86, 179, 0.4);
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
-/* Estado :disabled (campo desactivado) */
-input:disabled {
-  background-color: #e9ecef;
-  color: #6c757d;
+/* Estado :hover en entradas */
+input:hover:not(:disabled),
+select:hover:not(:disabled),
+textarea:hover:not(:disabled) {
+  border-color: #94a3b8;
+}
+
+/* Estado :disabled (Desactivado) */
+input:disabled,
+select:disabled,
+textarea:disabled {
+  background-color: var(--bg-disabled);
+  color: var(--text-disabled);
+  border-color: #e2e8f0;
   cursor: not-allowed;
-  border-color: #ced4da;
+  opacity: 0.8;
 }
 
-/* Opciones de Radio y Checkbox */
+/* Opciones Radiales y Checkbox */
 .options-inline {
   display: flex;
+  gap: 20px;
   align-items: center;
-  gap: 15px;
+  padding-top: 4px;
 }
 
-.options-inline label {
-  margin-bottom: 0;
-  font-weight: normal;
+.options-inline label,
+.checkbox-group label {
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.options-inline input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+  accent-color: var(--primary-color); /* Color nativo del radio/checkbox */
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
 }
 
 .checkbox-group {
@@ -112,31 +179,37 @@ input:disabled {
   gap: 10px;
 }
 
-.checkbox-group label {
-  margin-bottom: 0;
-  font-weight: normal;
-}
-
-/* Botón de Envío */
+/* ==========================================================================
+   6. BOTÓN DE ENVÍO Y ESTADOS (Hover, Active, Focus)
+   ========================================================================== */
 .btn-submit {
   width: 100%;
-  padding: 12px;
-  background-color: #0056b3;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
   color: #ffffff;
+  background-color: var(--primary-color);
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: calc(var(--radius) - 2px);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: var(--transition);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
 }
 
-/* Pseudo-clase :hover (al pasar el ratón por encima) */
+/* Estado :hover del Botón */
 .btn-submit:hover {
-  background-color: #003d80;
+  background-color: var(--primary-hover);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
 }
 
-/* Pseudo-clase :active (al hacer clic o presionar) */
+/* Estado :active del Botón (Al presionar) */
 .btn-submit:active {
-  transform: scale(0.98);
+  background-color: var(--primary-active);
+  transform: scale(0.99);
+}
+
+/* Estado :focus del Botón (Accesibilidad por teclado) */
+.btn-submit:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
 }
