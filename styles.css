@@ -41,16 +41,15 @@ body {
 
 /* Escudo UNSA */
 .logo-unsa {
-  height: 40px;
+  height: 52px;
   width: auto;
   object-fit: contain;
 }
 
 /* Logo de Sistemas (EPIS) - Agrandado */
 .logo-epis {
-  height: 40px;        /* Aumentado de 48px a 68px */
-  width: auto;
-  max-width: 100px;    /* Aumentado de 140px a 190px */
+  height: 52px;        /* Aumentado de 48px a 68px */
+  width: auto;   
   object-fit: contain;
 }
 
