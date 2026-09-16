@@ -41,7 +41,7 @@ body {
 
 /* Ajustes individuales para equilibrar el peso visual de ambos logos */
 .logo-unsa {
-  height: 52px;
+  height: 48px;
   width: auto;
   object-fit: contain;
 }
