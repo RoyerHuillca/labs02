@@ -1,4 +1,4 @@
-/* RESET GLOBAL */
+/* 1. RESET GLOBAL Y MODELO DE CAJA */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,7 +15,7 @@ body {
   padding: 30px 15px;
 }
 
-/* TARJETA PRINCIPAL (CARD) */
+/* 2. TARJETA PRINCIPAL (CARD) */
 .card {
   background-color: #ffffff;
   width: 100%;
@@ -26,22 +26,30 @@ body {
   border: 1px solid #e5e7eb;
 }
 
-/* ENCABEZADO CON LOGOS A LOS EXTREMOS */
+/* 3. ENCABEZADO Y LOGOS EN LOS EXTREMOS */
 .header-container {
   margin-bottom: 25px;
 }
 
 .logos-wrapper {
   display: flex;
-  justify-content: space-between; /* Envía un logo a la izquierda y otro a la derecha */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-bottom: 15px;
 }
 
-.logo-img {
-  height: 48px; /* Tamaño más pequeño y discreto */
+/* Ajustes individuales para equilibrar el peso visual de ambos logos */
+.logo-unsa {
+  height: 52px;
   width: auto;
+  object-fit: contain;
+}
+
+.logo-epis {
+  height: 48px;
+  width: auto;
+  max-width: 140px;
   object-fit: contain;
 }
 
@@ -49,7 +57,7 @@ body {
   font-size: 1.45rem;
   font-weight: 800;
   color: #0f172a;
-  text-align: center; /* Título perfectamente centrado */
+  text-align: center;
   letter-spacing: -0.02em;
 }
 
@@ -61,7 +69,7 @@ body {
   margin-top: 4px;
 }
 
-/* SECCIONES FIELDSET */
+/* 4. SECCIONES FIELDSET Y LEGEND */
 fieldset {
   border: 1.5px solid #e2e8f0;
   border-radius: 12px;
@@ -91,7 +99,7 @@ label {
   margin-bottom: 8px;
 }
 
-/* CAMPOS DE TEXTO E INPUTS */
+/* 5. CAMPOS DE TEXTO, SELECT Y TEXTAREA (.form-input) */
 .form-input {
   width: 100%;
   padding: 11px 14px;
@@ -108,7 +116,7 @@ textarea.form-input {
   resize: vertical;
 }
 
-/* ESTADOS INTERACTIVOS (PSEUDO-CLASES) */
+/* ESTADOS INTERACTIVOS DE ENTRADA (:focus, :hover, :disabled) */
 .form-input:focus {
   border-color: #2563eb;
   box-shadow: 0 0 0 3.5px rgba(37, 99, 235, 0.15);
@@ -124,7 +132,7 @@ textarea.form-input {
   cursor: not-allowed;
 }
 
-/* OPCIONES DE RADIO Y CHECKBOX */
+/* 6. OPCIONES RADIO Y CHECKBOX */
 .radio-group {
   display: flex;
   gap: 20px;
@@ -154,7 +162,7 @@ textarea.form-input {
   cursor: pointer;
 }
 
-/* BOTÓN DE ENVÍO */
+/* 7. BOTÓN DE ENVÍO (.btn-submit) */
 .btn-submit {
   width: 100%;
   padding: 13px;
