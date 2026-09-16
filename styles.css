@@ -50,7 +50,7 @@ body {
 .logo-epis {
   height: 52px;        /* Aumentado de 48px a 68px */
   width: auto;
-  max-width: 160px;    /* Aumentado de 140px a 190px */
+  max-width: 140px;    /* Aumentado de 140px a 190px */
   object-fit: contain;
 }
 
