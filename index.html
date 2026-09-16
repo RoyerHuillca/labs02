@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro de Estudiantes - UNSA</title>
+  <title>Registro de Estudiantes - EPIS UNSA</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="card">
     
-    <!-- Encabezado con Logo del Escudo UNSA -->
+    <!-- Encabezado con Logos (UNSA y EPIS) -->
     <div class="header-container">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/LOGO_UNSA.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original" alt="Escudo UNSA" class="unsa-logo">
+      <div class="logos-wrapper">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Escudo_UNSA.png/580px-Escudo_UNSA.png" alt="Escudo UNSA" class="logo-img">
+        <img src="https://epis.unsa.edu.pe/wp-content/uploads/sites/13/2020/09/cropped-epis-logo-1.png" alt="Logo EPIS UNSA" class="logo-img">
+      </div>
       <h2>Registro de Nuevo Estudiante</h2>
+      <p class="subtitle">Escuela Profesional de Ingeniería de Sistemas</p>
     </div>
 
     <form action="#" method="POST">
@@ -66,7 +70,7 @@
           <label for="carrera">Carrera Profesional:</label>
           <select id="carrera" name="carrera" class="form-input" required>
             <option value="">-- Seleccione una Carrera --</option>
-            <option value="sistemas">Ingeniería de Sistemas</option>
+            <option value="sistemas" selected>Ingeniería de Sistemas</option>
             <option value="industrial">Ingeniería Industrial</option>
             <option value="civil">Ingeniería Civil</option>
             <option value="ambiental">Ingeniería Ambiental</option>
