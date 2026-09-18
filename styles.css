@@ -1,4 +1,4 @@
-/* 1. RESET GLOBAL Y MODELO DE CAJA */
+/* RESET GLOBAL */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,9 +15,9 @@ body {
   padding: 30px 15px;
 }
 
-/* 2. TARJETA PRINCIPAL (CARD) */
+/* TARJETA PRINCIPAL (CARD) */
 .card {
-  background-color: #ffffff;
+  background-color: #fdfcfd;
   width: 100%;
   max-width: 550px;
   padding: 35px 30px;
@@ -26,7 +26,7 @@ body {
   border: 1px solid #e5e7eb;
 }
 
-/* 3. ENCABEZADO Y LOGOS EN LOS EXTREMOS */
+/* ENCABEZADO CON LOGOS A LOS EXTREMOS */
 .header-container {
   margin-bottom: 25px;
 }
@@ -34,23 +34,28 @@ body {
 .logos-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   width: 100%;
   margin-bottom: 15px;
 }
 
-/* Ajustes individuales para equilibrar el peso visual de ambos logos */
-.logo-unsa {
-  height: 48px;
+/* BASE PARA LOGOS */
+.logo-img {
   width: auto;
   object-fit: contain;
+  display: block;
 }
 
+/* 1. CSS ESPECÍFICO - LOGO UNSA (IZQUIERDA) */
+.logo-unsa {
+  height: 55px;
+  max-width: 120px;
+}
+
+/* 2. CSS ESPECÍFICO - LOGO EPIS (DERECHA) */
 .logo-epis {
-  height: 48px;
-  width: auto;
-  max-width: 140px;
-  object-fit: contain;
+  height: 120px;
+  max-width: 120px;
 }
 
 .card h2 {
@@ -69,7 +74,7 @@ body {
   margin-top: 4px;
 }
 
-/* 4. SECCIONES FIELDSET Y LEGEND */
+/* SECCIONES FIELDSET */
 fieldset {
   border: 1.5px solid #e2e8f0;
   border-radius: 12px;
@@ -99,16 +104,16 @@ label {
   margin-bottom: 8px;
 }
 
-/* 5. CAMPOS DE TEXTO, SELECT Y TEXTAREA (.form-input) */
+/* CAMPOS DE TEXTO E INPUTS */
 .form-input {
   width: 100%;
   padding: 11px 14px;
   font-size: 0.95rem;
-  color: #334155;
+  color: #090909;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   outline: none;
-  background-color: #ffffff;
+  background-color: #fcfdfd;
   transition: all 0.2s ease-in-out;
 }
 
@@ -116,7 +121,7 @@ textarea.form-input {
   resize: vertical;
 }
 
-/* ESTADOS INTERACTIVOS DE ENTRADA (:focus, :hover, :disabled) */
+/* ESTADOS INTERACTIVOS */
 .form-input:focus {
   border-color: #2563eb;
   box-shadow: 0 0 0 3.5px rgba(37, 99, 235, 0.15);
@@ -132,11 +137,18 @@ textarea.form-input {
   cursor: not-allowed;
 }
 
-/* 6. OPCIONES RADIO Y CHECKBOX */
+/* OPCIONES DE RADIO Y CHECKBOX */
 .radio-group {
   display: flex;
   gap: 20px;
   align-items: center;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
 }
 
 .radio-group label,
@@ -147,11 +159,7 @@ textarea.form-input {
   display: flex;
   align-items: center;
   gap: 6px;
-}
-
-.checkbox-group {
-  flex-direction: row;
-  align-items: center;
+  margin-bottom: 0;
 }
 
 .radio-group input[type="radio"],
@@ -162,7 +170,7 @@ textarea.form-input {
   cursor: pointer;
 }
 
-/* 7. BOTÓN DE ENVÍO (.btn-submit) */
+/* BOTÓN DE ENVÍO */
 .btn-submit {
   width: 100%;
   padding: 13px;
