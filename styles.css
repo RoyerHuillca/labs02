@@ -34,16 +34,16 @@ body {
 .logos-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: right;
+  align-items: center;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 
 /* BASE PARA LOGOS */
 .logo-img {
   width: auto;
-  object-fit: contain;
-  display: block;
+  object-fit:contain;
+  display:block;
 }
 
 /* 1. CSS ESPECÍFICO - LOGO UNSA (IZQUIERDA) */
@@ -54,12 +54,14 @@ body {
 
 /* 2. CSS ESPECÍFICO - LOGO EPIS (DERECHA) */
 .logo-epis {
-  height: 120px;
-  max-width: 120px;
+  height: 70px;
+  width: auto;
+  transform: scale(1.8);
+  transform-origin: center right;
 }
 
 .card h2 {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: #0f172a;
   text-align: center;
@@ -186,7 +188,7 @@ textarea.form-input {
 }
 
 .btn-submit:hover {
-  background-color: #1d4ed8;
+  background-color: #e10808;
   box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
 }
 
@@ -196,5 +198,5 @@ textarea.form-input {
 
 .btn-submit:focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 0 0 4px rgba(213, 241, 3, 0.35);
 }
