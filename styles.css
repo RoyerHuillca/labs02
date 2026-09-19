@@ -34,7 +34,7 @@ body {
 .logos-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: left;
+  align-items: right;
   width: 100%;
   margin-bottom: 15px;
 }
